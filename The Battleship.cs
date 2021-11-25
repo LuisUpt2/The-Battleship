@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace P._Battleship
 {
@@ -8,7 +8,7 @@ namespace P._Battleship
         {
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("**************************************************Welcome to the Battleship**************************************************");
+            Console.WriteLine("************************************************** Welcome to the Battleship **************************************************");
 
             /*Registro de cada jugador */
             Console.WriteLine("Jugador uno, Cual es tu nombre?!!");
@@ -20,7 +20,7 @@ namespace P._Battleship
             Console.WriteLine("");
 
             /*Se muestra las instrucciones del juego asi como los controles*/
-            Console.WriteLine("***************Instrucciones***************");
+            Console.WriteLine("*************** Instrucciones ***************");
             Console.WriteLine("Los jugadores manejan un tablero de océano y un tablero de tiro; cada uno divididos en casillas. Cada tablero representa una zona diferente del mar abierto: la propia y la contraria");
             Console.WriteLine("");
             Console.WriteLine("Cada jugador posisionara la misma cantidad de barcos en el tablero Una vez todas las naves han sido posicionadas, se inicia una serie de rondas. En cada ronda, cada jugador en su turno «dispara» hacia la flota de su oponente indicando una posición (las coordenadas de una casilla), la que registra en el segundo tablero. Si esa posición es ocupada por parte de un barco contrario, cantara !Hundido!");
@@ -94,7 +94,7 @@ namespace P._Battleship
             int[] columnasJugador1 = new int[3];
             Console.WriteLine("");
             Console.WriteLine("Bien, que comiense el juego!");
-            Console.WriteLine("Coloca las cordenadas donde estaran tus barcos " + jugador1 + "Recuerda usar cordenadas del 0 al 8");
+            Console.WriteLine("Coloca las cordenadas donde estaran tus barcos " + jugador1 + " Recuerda usar cordenadas del 0 al 7");
             Console.WriteLine("Comiensa con la fila del barco 1");
             filasJugador1[0] = Int16.Parse(Console.ReadLine());
             Console.WriteLine("Ahora la columna del barco 1");
@@ -114,7 +114,7 @@ namespace P._Battleship
             int[] filasJugador2 = new int[3];
             int[] columnasJugador2 = new int[3];
             Console.WriteLine("");
-            Console.WriteLine("Coloca las cordenadas donde estaran tus barcos " + jugador1 + "Recuerda usar cordenadas del 0 al 8");
+            Console.WriteLine("Coloca las cordenadas donde estaran tus barcos " + jugador2 + " Recuerda usar cordenadas del 0 al 7");
             Console.WriteLine("Comiensa con la fila del barco 1");
             filasJugador2[0] = Int16.Parse(Console.ReadLine());
             Console.WriteLine("Ahora la columna del barco 1");
@@ -135,6 +135,7 @@ namespace P._Battleship
             int contador1 = 0;
             int contador2 = 0;
 
+            Console.WriteLine("");
             Console.WriteLine("Es tu turno de jugar " + jugador1);
             Console.WriteLine("Donde ceres que este el barco del contrincante?. Recuerda usar cordenadas del 0 al 8");
             Console.WriteLine("Comensemos con las filas");
@@ -236,8 +237,8 @@ namespace P._Battleship
                 }
 
 
-                Console.WriteLine("Es tu turno de jugar " + jugador2);
                 Console.WriteLine("");
+                Console.WriteLine("Es tu turno de jugar " + jugador2);
                 Console.WriteLine("Comensemos con las filas");
                 filas = Int32.Parse(Console.ReadLine());
                 Console.WriteLine("Comensemos con las columnas");
@@ -261,8 +262,8 @@ namespace P._Battleship
                             {
                                 for (int c = 0; c <= 7; c++)
                                 {
-                                    Console.Write(tablero2[f, c] + " ");
-                                    tablero2[filas, columnas] = " o ";
+                                    Console.Write(tablero1[f, c] + " ");
+                                    tablero1[filas, columnas] = " o ";
                                 }
                                 Console.WriteLine(" ");
                             }
@@ -287,8 +288,8 @@ namespace P._Battleship
                                 {
                                     for (int c = 0; c <= 7; c++)
                                     {
-                                        Console.Write(tablero2[f, c] + " ");
-                                        tablero2[filas, columnas] = " o ";
+                                        Console.Write(tablero1[f, c] + " ");
+                                        tablero1[filas, columnas] = " o ";
                                     }
                                     Console.WriteLine(" ");
                                 }
@@ -311,8 +312,8 @@ namespace P._Battleship
                                     {
                                         for (int c = 0; c <= 7; c++)
                                         {
-                                            Console.Write(tablero2[f, c] + " ");
-                                            tablero2[filas, columnas] = " o ";
+                                            Console.Write(tablero1[f, c] + " ");
+                                            tablero1[filas, columnas] = " o ";
                                         }
                                         Console.WriteLine(" ");
                                     }
@@ -328,6 +329,26 @@ namespace P._Battleship
                                 else
                                 {
                                     Console.WriteLine("No es, sigue intentando");
+                                    Console.WriteLine("Tablero de " + jugador1);
+                                    for (int f = 0; f <= 7; f++)
+                                    {
+                                        for (int c = 0; c <= 7; c++)
+                                        {
+                                            Console.Write(tablero1[f, c] + " ");
+                                            tablero1[filas, columnas] = " x ";
+                                        }
+                                        Console.WriteLine(" ");
+                                    }
+                                    Console.WriteLine("Tablero de " + jugador2);
+                                    for (int f = 0; f <= 7; f++)
+                                    {
+                                        for (int c = 0; c <= 7; c++)
+                                        {
+                                            Console.Write(tablero2[f, c] + " ");
+                                            tablero2[filas, columnas] = " x ";
+                                        }
+                                        Console.WriteLine(" ");
+                                    }
                                     g = 4;
                                     h = 4;
                                 }
